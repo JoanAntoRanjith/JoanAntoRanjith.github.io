@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Joan Anto Ranjith – Data Analyst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#edf1f7;--surface:#fff;--ink:#16213a;--muted:#55607a;--line:#cbd3e3;--accent:#2748d8;--amber:#c98a00;--good:#0c8f7e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1626;--surface:#172036;--ink:#e8edf7;--muted:#9aa6c0;--line:#2a3654;--accent:#8fa6ff;--amber:#f2b84b;--good:#3cc9b4}}
+:root[data-theme="dark"]{--bg:#0f1626;--surface:#172036;--ink:#e8edf7;--muted:#9aa6c0;--line:#2a3654;--accent:#8fa6ff;--amber:#f2b84b;--good:#3cc9b4}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif;background-image:linear-gradient(color-mix(in srgb,var(--line) 45%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--line) 45%,transparent) 1px,transparent 1px);background-size:32px 32px}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:18px;flex-wrap:wrap;align-items:center;padding:18px 0;font-weight:500}
+nav a{color:var(--ink);text-decoration:none}nav a:hover{color:var(--accent)}
+button{font:inherit;color:inherit}
+nav button{margin-left:auto;background:none;border:1px solid var(--line);border-radius:20px;padding:4px 14px;cursor:pointer}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;padding:36px 0 56px}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800;letter-spacing:-.03em}
+.role{font:600 20px 'Bricolage Grotesque',sans-serif;color:var(--accent);margin:14px 0 16px}
+.hero p{color:var(--muted);max-width:52ch;margin:0 0 20px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:var(--surface);cursor:pointer}
+.btn.p{background:var(--ink);color:var(--bg)}
+.panel{background:var(--surface);border:1.5px solid var(--ink);border-radius:10px;padding:20px}
+.panel h2{font-size:21px}.panel small{color:var(--muted);display:block;margin:4px 0 8px}
+svg{display:block}.chart svg{width:100%;height:auto}
+.chart text{font:500 12px Figtree,sans-serif;fill:var(--muted)}
+.chart .val{font:700 20px 'Bricolage Grotesque',sans-serif;fill:var(--ink)}
+.bar{transform-box:fill-box;transform-origin:bottom;animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both}
+.bar.b2{animation-delay:.45s}
+@keyframes grow{from{transform:scaleY(0)}}
+@media (prefers-reduced-motion:reduce){.bar{animation:none}html{scroll-behavior:auto}}
+section{padding:44px 0;border-top:1.5px solid var(--ink)}
+section>h2{font-size:clamp(30px,4vw,44px);margin-bottom:6px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:70ch}
+.note{font-size:14.5px;color:var(--muted);border-left:4px solid var(--amber);padding:6px 12px;margin:16px 0 0;background:color-mix(in srgb,var(--surface) 80%,transparent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1.5px solid var(--line);background:var(--surface);padding:5px 14px;border-radius:20px;font-weight:500;font-size:15px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px}
+.kpi b{display:block;font:800 34px 'Bricolage Grotesque',sans-serif;color:var(--accent);letter-spacing:-.02em}
+.kpi span{color:var(--muted);font-size:15px;line-height:1.4;display:block}
+.hb{margin:10px 0}.hb div{display:flex;justify-content:space-between;font-size:15px}
+.hb i{display:block;height:12px;border-radius:3px;background:var(--accent);margin-top:3px;position:relative}
+.hb em{position:absolute;left:66.6%;top:-4px;bottom:-4px;border-left:2px dashed var(--amber)}
+.leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted);margin-top:8px}
+.leg b{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+.sql{background:#16213a;color:#e8edf7;border-radius:8px;padding:14px;margin-bottom:16px}
+.sql textarea{width:100%;background:transparent;border:0;color:#9ff0e0;font:500 15px ui-monospace,Menlo,monospace;resize:vertical}
+.sql textarea:focus{outline:2px solid #8fa6ff}
+.sql div{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:14px;color:#9aa6c0}
+.sql button{background:#f2b84b;color:#16213a;border:0;border-radius:6px;padding:6px 18px;font-weight:700;cursor:pointer}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card .in{padding:18px 20px 20px}
+.card h3{font-size:22px}.ctx{color:var(--muted);margin:4px 0 0;font-size:15px}
+.hd{position:relative;background:#16213a}.hd svg,.hd img{width:100%;height:auto;max-height:190px;object-fit:cover;display:block}
+.hd .lg{position:absolute;right:10px;top:10px;background:#fff;color:#16213a;border-radius:6px;padding:2px 8px}
+.logo{width:64px;height:22px;display:block}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.tags i{font-style:normal;font-size:13.5px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);padding:2px 10px;border-radius:12px;font-weight:500}
+details summary{cursor:pointer;font-weight:600;color:var(--accent);margin-top:12px}
+details ul{margin:10px 0 0;padding-left:20px}details li{margin-bottom:8px}
+.tl{border-left:3px solid var(--accent);margin-left:6px;padding-left:24px}
+.job{position:relative;margin-bottom:30px}
+.job:before{content:"";position:absolute;left:-33px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job h3{font-size:22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.when{color:var(--amber);font-weight:600;font-size:15px}
+.job ul{padding-left:20px;margin:8px 0 0}.job li{margin-bottom:7px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.g .card{padding:18px 20px}.g h3{font-size:18px;margin-bottom:10px}.g ul{margin:0;padding-left:20px}.g li{margin-bottom:6px}
+.chat{display:grid;gap:12px}
+#msgs{height:300px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:4px}
+.m{max-width:85%;padding:9px 14px;border-radius:12px;font-size:16px}
+.m.u{align-self:flex-end;background:var(--accent);color:var(--bg)}
+.m.b{align-self:flex-start;background:color-mix(in srgb,var(--line) 55%,var(--surface))}
+.chat form{display:flex;gap:8px}
+.chat input{flex:1;min-width:0;padding:10px 14px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.links a{display:block;background:var(--surface);border:1.5px solid var(--ink);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.links a:hover{border-color:var(--accent)}.links b{display:block;font:700 19px 'Bricolage Grotesque',sans-serif}.links span{color:var(--muted);font-size:14.5px;word-break:break-all}
+footer{padding:30px 0 40px;color:var(--muted);font-size:14px}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg id="bg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 800"></svg>
+<div class="wrap">
+<nav><a href="#dashboard">Dashboard</a><a href="#ask">Ask</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#toolbox">Toolbox</a><a href="#more">More</a><a href="#credentials">Resume</a><a href="#contact">Contact</a><button id="theme" type="button">Theme</button></nav>
+<main>
+<div class="hero">
+ <div><h1 id="name"></h1><div class="role" id="role"></div><p id="summary"></p><div class="btns" id="heroBtns"></div></div>
+ <figure class="panel chart" style="margin:0" id="chart"></figure>
+</div>
+<section id="dashboard"><h2>Impact dashboard</h2><p class="sub">Filter it like a Power BI slicer. Pick a source to change the tiles.</p><div class="chips" id="slicer" role="group" aria-label="Dashboard slicer"></div><div class="kpis" id="kpis"></div><div class="dash"><div class="panel" id="team"></div><div class="panel" id="donut"></div></div><p class="note" id="policy"></p></section>
+<section id="ask"><h2>Ask my portfolio</h2><p class="sub">A chat assistant that answers questions about my experience, skills and projects. It only uses the information on this page.</p><div class="panel chat"><div id="msgs" aria-live="polite"></div><div class="chips" id="sugg"></div><form id="chatForm"><input id="q" aria-label="Your question" placeholder="Ask about experience, tools, certifications..." autocomplete="off"><button class="btn p" type="submit">Ask</button></form></div></section>
+<section id="projects"><h2>Projects</h2><p class="sub">Query my work with SQL, or tap a tool. Supported: WHERE tools LIKE, WHERE company =, ORDER BY title, LIMIT.</p><div class="sql"><textarea id="sqlIn" rows="2" aria-label="SQL query" spellcheck="false"></textarea><div><button id="run" type="button">Run query</button><span id="sqlOut"></span></div></div><div class="chips" id="chips" role="group" aria-label="Example queries"></div><div class="proj" id="proj"></div></section>
+<section id="experience"><h2>Experience</h2><p class="sub">Eight years across catalog operations, analytics and civil engineering.</p><div class="tl" id="jobs"></div></section>
+<section id="toolbox"><h2>Toolbox</h2><p class="sub">Tools I use to clean, model, automate and present data.</p><div class="g" id="skills"></div></section>
+<section id="more"><h2>More from me</h2><p class="sub">Sections I’m growing. New work lands here first.</p><div class="g" id="extra"></div></section>
+<section id="credentials"><h2>Resume and credentials</h2><div class="panel" style="margin-bottom:18px"><h3>My resume</h3><p class="sub" style="margin:6px 0 14px">Download the full resume as a Word file.</p><a class="btn p" id="resume" download>Download resume</a></div><div class="g" id="creds"></div></section>
+<section id="contact"><h2>Let’s talk data</h2><p class="sub" id="loc"></p><div class="links" id="links"></div></section>
+</main>
+<footer>Edit the DATA block at the top of the script to update everything on this page.</footer>
+</div>
+<script>
+/* ================= EDIT YOUR CONTENT HERE ================= */
+const DATA = {
+ name:"Joan Anto Ranjith",
+ role:"Data Analyst | Analytics & Automation Professional",
+ summary:"8+ years of experience, including 6 at Amazon in catalog operations. I turn large, messy datasets into dashboards, KPIs and Python automations that cut manual work and show teams where to act.",
+ location:"Chennai, India",
+ email:"joanantoranjith@gmail.com", phone:"+91 9790371605",
+ resume:"Joan_Anto_Ranjith_Resume.docx",
+ links:[["LinkedIn","http://www.linkedin.com/in/joan-anto-ranjith","linkedin.com/in/joan-anto-ranjith"],["GitHub","https://github.com/JoanAntoRanjith","github.com/JoanAntoRanjith"],["HackerRank","https://www.hackerrank.com/profile/joanantoranjith","hackerrank.com/joanantoranjith"]],
+ policy:"Original data, internal datasets and key business metrics from my Amazon work are not shown here because of company policy. The figures below come from my resume, and the charts are illustrations.",
+ chart:{title:"ASINs processed per day",note:"Python LNA automation at Amazon (illustrative, log scale)",before:300,after:250000,beforeLabel:"Manual process",afterLabel:"Automated (200K–300K)"},
+ kpis:[["200K+","ASINs a day automated, up from about 300","Amazon"],["98.7%","accuracy in sample audits of the automation","Amazon"],["1,000+","hours of associate effort saved","Amazon"],["40+","hours a month saved on LNA inflow analysis","Amazon"],["140%","productivity leading 7 associates","Amazon"],["4.57%","drop in electricity units used after dashboard-led changes","Hostel project"]],
+ team:[["Productivity",140],["Quality",100],["SLA",98]],
+ projects:[
+  {title:"LNA Inflow Analysis Automation",context:"Amazon, EU9 Marketplace Launch Program",company:"Amazon",logo:true,art:"pipeline",image:"",tags:["Python","Pandas","NumPy","OpenPyXL","Automation"],
+   points:["Built a five-stage workflow covering duplicate detection, ASIN validation, leaf-node analysis, brand/GL enrichment and historical processing checks.","Standardised ASINs, applied leaf-node score criteria and excluded restricted or invalid records across 20+ inflow files a month.","One click runs the full analysis, builds a structured Excel file with classification summaries and emails it to stakeholders through Outlook.","Selected on Amazon Idea Central and adopted by EU9 teams for recurring inflow analysis."]},
+  {title:"Hostel Electricity Billing & Analytics Platform",context:"Personal capstone project",company:"Personal",art:"meter",image:"",tags:["Python","Streamlit","Supabase","Power BI","SQL"],
+   points:["Built a database-backed billing app for an 8-room, 33-tenant hostel that manages tenants, occupancy, meter readings and billing cycles.","Automated billing from actual meter consumption and tenant stay duration, across 2 room types and 3 unit rates.","Built a Power BI dashboard published to Power BI Service, connected to Supabase with scheduled refresh, showing the highest and lowest usage room each month.","Usage-reduction measures based on the dashboard cut total units consumed by 4.57%."]},
+  {title:"Chennai Flood Risk Investigation",context:"Personal portfolio project",company:"Personal",art:"rain",image:"",tags:["Python","EDA","Sweetviz","Matplotlib","Seaborn","Plotly"],
+   points:["Analysed 30+ years of Chennai rainfall data for seasonal patterns, variability, extreme events and Northeast Monsoon behaviour.","Ran manual EDA on data quality, time series, outliers and correlations, then compared it with automated EDA to see what each approach finds and misses."]}
+ ],
+ sqlPresets:["SELECT * FROM projects;","SELECT * FROM projects WHERE tools LIKE '%Python%';","SELECT * FROM projects WHERE tools LIKE '%Power BI%';","SELECT * FROM projects WHERE company = 'Amazon';","SELECT * FROM projects ORDER BY title LIMIT 2;"],
+ jobs:[
+  {org:"Amazon",logo:true,title:"Senior Associate, Catalog",when:"Sep 2020 – Present",points:["Built Python LNA automation that scaled from ~300 to 200K–300K ASINs a day at 98.7% audit accuracy, saving 1,000+ hours.","Streamlined five stages of LNA inflow analysis, saving ~2 hours per inflow across 20+ monthly inflows.","Led 7 associates across Sweden, Poland and Belgium with Power BI and QuickSight dashboards: 140% productivity, 100% quality, 98% SLA.","Onboarded 12+ operational processes through knowledge transfer, pilots, training, SOPs and production ramp-up.","Ran data-driven WBRs, MBRs and monthly scorecards that improved the team’s YTD performance trend by 4%.","Created AI-powered agents and workflows in Amazon Quick to automate analysis, visualisation and repetitive tasks."]},
+  {org:"Keechery Engineering & Co",title:"Project Engineer",when:"Dec 2019 – Jul 2020",points:["Managed execution, scheduling and reporting across 3 commercial building projects (civil and MEP)."]},
+  {org:"Aarvee Associates",title:"Engineer",when:"May 2018 – Oct 2019",points:["Supported land acquisition, feasibility studies, valuation and scheduling for the NH-332A four-laning."]}
+ ],
+ skills:{"Data analytics":["Python","SQL","Pandas","NumPy","Statistics","Data cleaning","EDA","Git","ETL","Business insights"],"Business intelligence":["Excel","Power BI","Power Query","DAX","Data modelling","QuickSight","Tableau","Looker","Alteryx"],"Python & automation":["OpenPyXL","Matplotlib","Seaborn","Plotly","Streamlit","PySpark","Requests","BeautifulSoup","Selenium"],"Databases & platforms":["MySQL","PostgreSQL","Supabase","MongoDB","Snowflake","Data pipelines"],"AI & modern analytics":["AI agents","AI-assisted analysis","Workflow automation","MCP-enabled workflows"]},
+ extra:[
+  {title:"Data stories",items:["Case studies and write-ups are coming soon.","Add a story: the question, the data, the method and the result."]},
+  {title:"Currently exploring",items:["AI agents for data analysis","MCP-enabled analytics workflows","Advanced DAX and data modelling"]},
+  {title:"Dashboards gallery",items:["Add a screenshot or link to a Power BI or Tableau dashboard here."]}
+ ],
+ certs:["Python: IBM (2023), Amazon ACES (2024), Codebasics (2026)","SQL: 360DigiTMG (2023), Amazon ACES (2024), Codebasics (2026)","Power BI Data Analytics: Codebasics (2026)","Data Science using Python: 360DigiTMG (2023)","Tableau Desktop Certified Professional: 360DigiTMG (2023)"],
+ awards:["4x Top Performer Award (#1 ranking) at Amazon","RBS Quality Gold and Silver Medals at Amazon","HackerRank Gold Star badges in SQL and Python"],
+ education:"B.E. Civil Engineering, Sethu Institute of Technology, Madurai (2014–2018), CGPA 8.65/10",
+ languages:"English, Tamil, Hindi, Swedish (A2)"
+};
+/* =========================================================== */
+const $=id=>document.getElementById(id),fmt=n=>n.toLocaleString("en-IN"),L=s=>s.toLowerCase();
+const LOGO=`<svg class="logo" viewBox="0 0 90 30" role="img" aria-label="Amazon"><text x="2" y="17" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="19" fill="currentColor">amazon</text><path d="M8 22Q38 31 68 21" stroke="#ff9900" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M64 17.5L69 21L63 24" stroke="#ff9900" stroke-width="2.2" fill="none"/></svg>`;
+$("name").textContent=DATA.name;$("role").textContent=DATA.role;$("summary").textContent=DATA.summary;$("policy").textContent=DATA.policy;
+$("heroBtns").innerHTML=`<a class="btn p" href="#projects">See my projects</a><a class="btn" href="#credentials">Get my resume</a><a class="btn" href="#ask">Ask a question</a>`;
+$("resume").href=DATA.resume;
+// data-themed background: scatter + trend line
+(function(){let s=7;const r=()=>(s=s*16807%2147483647)/2147483647;let d="";
+ for(let i=0;i<90;i++){const x=r()*1200,y=700-x*.45+(r()-.5)*260;d+=`<circle cx="${x|0}" cy="${Math.max(40,y)|0}" r="${2+r()*3}" fill="var(--accent)" opacity=".18"/>`}
+ $("bg").innerHTML=d+`<line x1="0" y1="700" x2="1200" y2="160" stroke="var(--amber)" stroke-width="2" stroke-dasharray="8 8" opacity=".35"/>`})();
+// hero chart (log scale)
+(function(){const c=DATA.chart,H=170,top=20,base=top+H,sc=v=>(Math.log10(v)-1)/5*H;
+ const ticks=[10,100,1000,10000,100000,1000000].map(t=>`<line x1="46" x2="400" y1="${base-sc(t)}" y2="${base-sc(t)}" stroke="var(--line)"/><text x="40" y="${base-sc(t)+4}" text-anchor="end">${t>=1000?t/1000+"K":t}</text>`).join("");
+ const b=(x,v,l,cls)=>`<rect class="bar ${cls}" x="${x}" y="${base-sc(v)}" width="110" height="${sc(v)}" rx="3" fill="${cls=="b2"?"var(--accent)":"var(--amber)"}"/><text class="val" x="${x+55}" y="${base-sc(v)-8}" text-anchor="middle">${fmt(v)}</text><text x="${x+55}" y="${base+18}" text-anchor="middle">${l}</text>`;
+ $("chart").innerHTML=`<h2>${c.title}</h2><small>${c.note}</small><svg viewBox="0 0 420 230" role="img" aria-label="Log-scale bar chart: ${fmt(c.before)} ASINs a day before automation, ${fmt(c.after)} after.">${ticks}${b(90,c.before,c.beforeLabel,"b1")}${b(250,c.after,c.afterLabel,"b2")}</svg>`})();
+// dashboard with slicer
+let area="All";const areas=["All",...new Set(DATA.kpis.map(k=>k[2]))];
+function drawDash(){
+ $("slicer").innerHTML=areas.map(a=>`<button class="chip" type="button" aria-pressed="${a==area}" data-a="${a}">${a}</button>`).join("");
+ $("kpis").innerHTML=DATA.kpis.filter(k=>area=="All"||k[2]==area).map(k=>`<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join("")}
+$("slicer").addEventListener("click",e=>{const t=e.target.closest("[data-a]");if(t){area=t.dataset.a;drawDash();$("slicer").querySelector(`[data-a="${area}"]`).focus()}});drawDash();
+$("team").innerHTML=`<h2>Team performance (Amazon)</h2><small>Team of 7 across Sweden, Poland and Belgium. Dashed line marks 100%.</small>`+DATA.team.map(t=>`<div class="hb"><div><span>${t[0]}</span><b>${t[1]}%</b></div><i style="width:${t[1]/150*100}%"><em style="left:${100/t[1]*100}%"></em></i></div>`).join("");
+(function(){const e=Object.entries(DATA.skills),tot=e.reduce((a,[,v])=>a+v.length,0),col=["#2748d8","#c98a00","#0c8f7e","#b4429c","#e0533d"];let off=25;
+ const arcs=e.map(([k,v],i)=>{const p=v.length/tot*100,o=off;off-=p;return `<circle cx="21" cy="21" r="15.915" fill="none" stroke="${col[i%5]}" stroke-width="7" stroke-dasharray="${p} ${100-p}" stroke-dashoffset="${o}"/>`}).join("");
+ $("donut").innerHTML=`<h2>Skill mix</h2><small>${tot} tools and techniques by category</small><div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><svg width="130" height="130" viewBox="0 0 42 42" role="img" aria-label="Donut chart of skills by category">${arcs}</svg><div class="leg" style="flex-direction:column">${e.map(([k,v],i)=>`<span><b style="background:${col[i%5]}"></b>${k} (${v.length})</span>`).join("")}</div></div>`})();
+// project header art
+const art=(k)=>{const F='<defs><linearGradient id="g'+k+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2b55"/><stop offset="1" stop-color="#0d1427"/></linearGradient></defs><rect width="420" height="160" fill="url(#g'+k+')"/>'+[40,80,120].map(y=>`<line x1="0" x2="420" y1="${y}" y2="${y}" stroke="#fff" opacity=".08"/>`).join("");let g="";
+ if(k=="pipeline")g=[0,1,2,3,4].map(i=>`<rect x="${34+i*72}" y="${40+i*6}" width="50" height="${70-i*10}" rx="6" fill="${["#8fa6ff","#f2b84b","#3cc9b4","#8fa6ff","#f2b84b"][i]}" opacity=".9"/>${i<4?`<path d="M${88+i*72} 75 h18" stroke="#fff" stroke-width="2"/>`:""}`).join("")+`<text x="34" y="142" fill="#e8edf7" font-size="13" font-family="Figtree">duplicates → ASIN checks → leaf nodes → enrich → history</text>`;
+ if(k=="meter")g=[50,78,64,102,88,120,70,96].map((h,i)=>`<rect x="${30+i*40}" y="${135-h}" width="26" height="${h}" rx="3" fill="${i>4?"#3cc9b4":"#8fa6ff"}"/>`).join("")+`<path d="M30 70 L110 55 L190 62 L270 40 L350 30 L390 28" stroke="#f2b84b" stroke-width="3" fill="none"/>`;
+ if(k=="rain")g=`<path d="M0 110 Q40 40 80 90 T160 70 T240 100 T320 30 T420 80" stroke="#8fa6ff" stroke-width="3" fill="none"/><path d="M0 125 Q60 95 120 118 T240 110 T420 120" stroke="#3cc9b4" stroke-width="2" fill="none"/>`+[60,140,230,300,360].map((x,i)=>`<path d="M${x} ${20+i*9} q-5 10 0 14 q5 -4 0 -14z" fill="#f2b84b"/>`).join("");
+ return `<svg viewBox="0 0 420 160" role="img" aria-label="Illustration of the ${k} project">${F}${g}</svg>`};
+// SQL runner
+const tags=[...new Set(DATA.projects.flatMap(p=>p.tags))];
+function runSQL(q){const m=q.match(/like\s+'%?([^'%]+)%?'/i),c=q.match(/company\s*=\s*'([^']+)'/i),l=q.match(/limit\s+(\d+)/i);
+ if(!/^\s*select\s+[\s\S]+\s+from\s+projects/i.test(q))return{err:"Start with: SELECT * FROM projects ..."};
+ let r=DATA.projects.filter(p=>(!m||p.tags.some(t=>L(t).includes(L(m[1]))))&&(!c||L(p.company||"Personal")==L(c[1])));
+ if(/order by title/i.test(q))r=[...r].sort((a,b)=>a.title.localeCompare(b.title));if(l)r=r.slice(0,+l[1]);return{rows:r}}
+function card(p){const img=p.image?`<img src="${p.image}" alt="${p.title} header image">`:art(p.art||"pipeline");
+ return `<article class="card"><div class="hd">${img}${p.logo?`<div class="lg">${LOGO}</div>`:""}</div><div class="in"><h3>${p.title}</h3><div class="ctx">${p.context}</div><div class="tags">${p.tags.map(t=>`<i>${t}</i>`).join("")}</div><details><summary>What I built</summary><ul>${p.points.map(x=>`<li>${x}</li>`).join("")}</ul></details>${p.logo?`<p class="note">Original data and key metrics are not shown due to company policy.</p>`:""}</div></article>`}
+function go(q){$("sqlIn").value=q;const r=runSQL(q);$("sqlOut").textContent=r.err||`${r.rows.length} row${r.rows.length==1?"":"s"} returned`;$("proj").innerHTML=r.err?"":(r.rows.length?r.rows.map(card).join(""):"<p>No rows match this query.</p>")}
+$("chips").innerHTML=DATA.sqlPresets.map((q,i)=>`<button class="chip" type="button" data-i="${i}">${q.replace("SELECT * FROM projects","").replace(";","").trim()||"All projects"}</button>`).join("");
+$("chips").addEventListener("click",e=>{const t=e.target.closest("[data-i]");if(t)go(DATA.sqlPresets[t.dataset.i])});
+$("run").onclick=()=>go($("sqlIn").value);$("sqlIn").addEventListener("keydown",e=>{if(e.key=="Enter"&&(e.ctrlKey||e.metaKey)){e.preventDefault();go($("sqlIn").value)}});go(DATA.sqlPresets[0]);
+$("jobs").innerHTML=DATA.jobs.map(j=>`<div class="job"><h3>${j.title} ${j.logo?LOGO:"· "+j.org}</h3><div class="when">${j.when}</div><ul>${j.points.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
+$("skills").innerHTML=Object.entries(DATA.skills).map(([k,v])=>`<div class="card"><h3>${k}</h3><div class="tags" style="margin:0">${v.map(t=>`<i>${t}</i>`).join("")}</div></div>`).join("");
+$("extra").innerHTML=DATA.extra.map(x=>`<div class="card"><h3>${x.title}</h3><ul>${x.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>`).join("");
+$("creds").innerHTML=`<div class="card"><h3>Certifications</h3><ul>${DATA.certs.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="card"><h3>Awards and badges</h3><ul>${DATA.awards.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="card"><h3>Education and languages</h3><ul><li>${DATA.education}</li><li>Languages: ${DATA.languages}</li></ul></div>`;
+$("loc").textContent=`Based in ${DATA.location}. Choose where to find me.`;
+$("links").innerHTML=DATA.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener"><b>${l[0]}</b><span>${l[2]}</span></a>`).join("")+`<a href="mailto:${DATA.email}"><b>Email</b><span>${DATA.email}</span></a><a href="tel:${DATA.phone.replace(/\s/g,"")}"><b>Phone</b><span>${DATA.phone}</span></a>`;
+$("theme").onclick=()=>{const r=document.documentElement,d=(r.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))=="dark";r.dataset.theme=d?"light":"dark"};
+// portfolio assistant: answers only from DATA
+const CH=[];const add=(t)=>CH.push(t);
+add(`About ${DATA.name}: ${DATA.summary}`);add(`Contact ${DATA.name}: email ${DATA.email}, phone ${DATA.phone}, based in ${DATA.location}. ${DATA.links.map(l=>l[0]+": "+l[2]).join(", ")}.`);
+add(`Resume: you can download the resume from the Resume section of this page.`);
+DATA.jobs.forEach(j=>j.points.forEach(p=>add(`At ${j.org} (${j.title}, ${j.when}): ${p}`)));
+DATA.projects.forEach(p=>{add(`Project ${p.title} (${p.context}), tools: ${p.tags.join(", ")}.`);p.points.forEach(x=>add(`Project ${p.title}: ${x}`))});
+Object.entries(DATA.skills).forEach(([k,v])=>add(`Skills and tools, ${k}: ${v.join(", ")}.`));
+add(`Certifications: ${DATA.certs.join("; ")}.`);add(`Awards: ${DATA.awards.join("; ")}.`);add(`Education: ${DATA.education}. Languages: ${DATA.languages}.`);
+add(`Confidentiality: ${DATA.policy}`);DATA.extra.forEach(x=>add(`${x.title}: ${x.items.join(" ")}`));
+const STOP=new Set("a an the is are was were of in on at to for and or with what who how do does did you your his her he she me my tell about can has have it this that joan any which".split(" "));
+const stem=w=>w.replace(/(ing|ed|es|s|ion)$/,"");
+function answer(q){const ql=L(q);if(/contact|email|phone|reach|linkedin|github|hire/.test(ql))return CH[1];if(/resume|cv\b/.test(ql))return CH[2];
+ const ws=ql.replace(/[^a-z0-9+# ]/g," ").split(/\s+/).filter(w=>w&&!STOP.has(w)).map(stem).filter(w=>w.length>1);
+ const sc=CH.map(c=>{const cl=L(c);return ws.reduce((a,w)=>a+(cl.includes(w)?1+(w.length>4?.5:0):0),0)});
+ const idx=sc.map((s,i)=>[s,i]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,2);
+ if(!idx.length||idx[0][0]<1)return `I don’t have that on this page. You can ask ${DATA.name} directly at ${DATA.email}.`;
+ return idx.map(x=>CH[x[1]]).join("\n\n")}
+const say=(t,c)=>{const d=document.createElement("div");d.className="m "+c;d.style.whiteSpace="pre-line";d.textContent=t;$("msgs").append(d);$("msgs").scrollTop=1e9};
+say(`Hi! I can answer questions about ${DATA.name}’s experience, projects, skills and certifications.`,"b");
+["What did Joan automate at Amazon?","Which tools does Joan use?","Any SQL certifications?","How can I contact Joan?"].forEach(q=>{const b=document.createElement("button");b.className="chip";b.type="button";b.textContent=q;b.onclick=()=>ask(q);$("sugg").append(b)});
+function ask(q){say(q,"u");setTimeout(()=>say(answer(q),"b"),250)}
+$("chatForm").onsubmit=e=>{e.preventDefault();const v=$("q").value.trim();if(v){$("q").value="";ask(v)}};
+</script>
+</body>
+</html>
