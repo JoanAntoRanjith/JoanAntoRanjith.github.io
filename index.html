@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Joan Anto Ranjith – Data Analyst</title>
+<meta id="vp" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700;800&family=Fira+Code:wght@400;500;700&display=swap">
+<style>
+/* ===== BASE (Neutral theme, light) ===== */
+:root{--bg:#eef2f8;--surface:#fff;--ink:#16213a;--muted:#55607a;--line:#cbd3e3;--accent:#2748d8;--hi:#2748d8;--amber:#c98a00;--good:#0c8f7e;--fh:'Bricolage Grotesque',Figtree,sans-serif;--fb:Figtree,system-ui,sans-serif;--fm:ui-monospace,Menlo,Consolas,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html[data-theme="dark"]{--bg:#0f1626;--surface:#172036;--ink:#e8edf7;--muted:#9aa6c0;--line:#2a3654;--accent:#8fa6ff;--hi:#8fa6ff;--amber:#f2b84b;--good:#3cc9b4}
+html{scroll-padding-top:120px;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--fb)}
+body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3,h4{font-family:var(--fh);line-height:1.1;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+button{font:inherit;color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1.5px solid var(--ink)}
+.bar{display:flex;align-items:center;gap:14px;padding-top:10px;padding-bottom:6px}
+.brand{font:800 20px var(--fh);white-space:nowrap}.brand span{color:var(--accent)}
+.fx{flex:1;min-width:0;display:flex;align-items:center;border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden;font:500 14px var(--fm)}
+.fx i{padding:3px 10px;border-right:1px solid var(--line);color:var(--accent);font-weight:700}.fx code{padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
+.ctl{display:flex;gap:6px}
+.ib{width:34px;height:34px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
+.ib[aria-pressed=true]{background:var(--hi);border-color:var(--hi);color:var(--bg)}
+.ib svg,#fab svg,.av svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs a,.tabs button{display:flex;align-items:center;white-space:nowrap;padding:7px 12px;border:0;background:none;color:var(--muted);text-decoration:none;font-weight:500;font-size:15px;border-bottom:3px solid transparent;cursor:pointer}
+.tabs a:hover,.tabs button:hover{color:var(--ink)}
+.tabs a[aria-current=true]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+.tabs a[aria-current=true] .ic{color:var(--accent)}
+.ic{display:inline-block;width:13px;height:12px;margin-right:7px;background:linear-gradient(currentColor,currentColor) 0 100%/3px 45%,linear-gradient(currentColor,currentColor) 5px 100%/3px 100%,linear-gradient(currentColor,currentColor) 10px 100%/3px 70%;background-repeat:no-repeat}
+#prog{height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--amber))}
+/* theme picker */
+.tp{margin-top:26px}.tp h2{font-size:24px}.tp p{margin:6px 0 14px;color:var(--muted);max-width:75ch}
+.sk4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.sk{display:flex;flex-direction:column;gap:2px;align-items:flex-start;text-align:left;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);cursor:pointer}
+.sk svg{width:36px;height:36px;margin-bottom:6px}.sk b{font:700 18px var(--fh)}.sk span{font-size:14px;color:var(--muted);line-height:1.35}
+.sk em{display:none;font-style:normal;font-size:12.5px;font-weight:700;color:var(--accent)}
+.sk[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}.sk[aria-pressed=true] em{display:inline}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;padding:40px 0 56px}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800;letter-spacing:-.03em}
+.role{font:600 20px var(--fh);color:var(--accent);margin:14px 0 16px}
+.hero p{color:var(--muted);max-width:54ch;margin:0 0 20px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:var(--surface);cursor:pointer}
+.btn.p{background:var(--ink);color:var(--bg)}
+.panel{background:var(--surface);border:1.5px solid var(--ink);border-radius:10px;padding:20px}
+.panel h2{font-size:22px}.panel small{color:var(--muted);display:block;margin:4px 0 10px}
+.pie{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.leg{display:flex;flex-direction:column;gap:2px;font-size:15px}
+.leg button{display:flex;gap:8px;align-items:center;background:none;border:0;padding:4px 8px;border-radius:6px;cursor:pointer;text-align:left}
+.leg button[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 14%,transparent);font-weight:600}
+.leg b{width:11px;height:11px;border-radius:2px;flex:none}
+.pick{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}.pick h3{font-size:18px}
+section{padding:46px 0;border-top:1.5px solid var(--ink)}
+section>h2{font-size:clamp(30px,4vw,44px);margin-bottom:6px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:70ch}
+.note{font-size:14.5px;color:var(--muted);border-left:4px solid var(--amber);padding:6px 12px;margin:16px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1.5px solid var(--line);background:var(--surface);padding:5px 14px;border-radius:20px;font-weight:500;font-size:15px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--hi);border-color:var(--hi);color:var(--bg)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px}
+.kpi b{display:block;font:800 32px var(--fh);color:var(--accent);letter-spacing:-.02em}
+.kpi span{color:var(--muted);font-size:15px;line-height:1.4;display:block}
+.con{background:#16213a;color:#e8edf7;border-radius:8px;padding:14px;margin-bottom:16px}
+.con textarea{width:100%;background:transparent;border:0;color:#9ff0e0;font:500 15px var(--fm);resize:vertical}
+.con textarea:focus{outline:2px solid #8fa6ff}
+.con div{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:14px;color:#9aa6c0}
+.con button{background:#f2b84b;color:#16213a;border:0;border-radius:6px;padding:6px 18px;font-weight:700;cursor:pointer}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card .in{padding:18px 20px 20px}
+.card h3{font-size:21px}.ctx{color:var(--muted);margin:4px 0 0;font-size:15px}
+.hd{position:relative;background:#16213a}.hd>svg,.hd>img{width:100%;height:auto;max-height:190px;object-fit:cover;object-position:top;display:block}
+.hd>svg text{font-family:var(--fb)}
+.hd .lg{position:absolute;right:10px;top:10px;background:#fff;color:#16213a;border-radius:6px;padding:2px 8px}
+.logo{width:64px;height:22px;display:block}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.tags i{font-style:normal;font-size:13.5px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);padding:2px 10px;border-radius:12px;font-weight:500}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.acts .btn{padding:7px 14px;font-size:15px}
+details summary{cursor:pointer;font-weight:600;color:var(--accent);margin-top:12px}
+details ul{margin:10px 0 0;padding-left:20px}details li{margin-bottom:8px}
+details p{margin:6px 0 0;font-size:16px}
+.pb{font-size:15px;margin:14px 0 2px;color:var(--amber)}
+.tl{border-left:3px solid var(--accent);margin-left:6px;padding-left:24px}
+.job{position:relative;margin-bottom:30px}
+.job:before{content:"";position:absolute;left:-33px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job h3{font-size:22px}.when{color:var(--amber);font-weight:600;font-size:15px}
+.clg{margin:8px 0 4px;min-height:26px}.clg img{height:30px;width:auto;max-width:170px;object-fit:contain;display:block;background:#fff;padding:2px 8px;border-radius:4px}.clg .logo{height:26px;width:76px}.cn{font-weight:700;font-size:17px}
+.job ul{padding-left:20px;margin:8px 0 0}.job li{margin-bottom:7px}
+.grp{font-size:19px;margin:6px 0 22px;color:var(--muted)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.g .card{padding:18px 20px}.g h3{font-size:18px;margin-bottom:10px}.g ul{margin:0;padding-left:20px}.g li{margin-bottom:6px}
+.span{grid-column:1/-1}.gl{font-weight:600;font-size:15px;margin:12px 0 0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.gal img{width:100%;border-radius:6px;border:1px solid var(--line);display:block}.gal figure{margin:0}.gal figcaption{font-size:14px;color:var(--muted);margin-top:4px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.links>*{display:block;background:var(--surface);border:1.5px solid var(--ink);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.links a:hover{border-color:var(--accent)}.links b{display:block;font:700 19px var(--fh)}.links span{color:var(--muted);font-size:14.5px;word-break:break-all}
+.links div a{display:block;margin-top:4px;font-weight:500}
+footer{padding:30px 0 90px;color:var(--muted);font-size:14px}
+/* project dialog */
+dialog{width:min(94vw,860px);max-height:90vh;padding:0;border:1.5px solid var(--ink);border-radius:10px;background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(10,15,30,.65)}
+dialog .in{padding:20px 24px 26px}dialog h3.h4{font-size:19px;margin:22px 0 8px}
+.x{position:absolute;right:10px;top:10px;z-index:2;width:34px;height:34px;border-radius:50%;border:0;background:#fff;color:#16213a;font-size:22px;line-height:1;cursor:pointer}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.shots img{width:100%;border-radius:6px;border:1px solid var(--line)}.shots figcaption{font-size:14px;color:var(--muted)}.shots figure{margin:0}
+.ph0{aspect-ratio:16/10;border:2px dashed var(--line);border-radius:6px;display:grid;place-items:center;color:var(--muted);font-size:14.5px;text-align:center;padding:8px}
+/* chat popup */
+#fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:58px;height:58px;border-radius:50%;border:2px solid var(--ink);background:var(--hi);color:var(--bg);cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#fab svg{width:30px;height:30px}
+#pop{position:fixed;right:18px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:70;width:min(360px,calc(100vw - 24px));height:min(480px,70vh);display:flex;flex-direction:column;background:var(--surface);border:1.5px solid var(--ink);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.3);overflow:hidden}
+#pop[hidden]{display:none}
+.ph{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--ink);color:var(--bg)}.ph b{flex:1;font:700 16px var(--fh)}
+.ph button{background:none;border:0;color:inherit;font-size:24px;line-height:1;cursor:pointer}
+#msgs{flex:1;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px}
+.row{display:flex;gap:8px;align-items:flex-end;align-self:flex-start;max-width:92%}
+.av{flex:none;width:30px;height:30px;border-radius:50%;background:var(--hi);color:var(--bg);display:grid;place-items:center}.av svg{width:18px;height:18px}
+.m{padding:8px 13px;border-radius:12px;font-size:15.5px;line-height:1.5;white-space:pre-line}
+.m.u{align-self:flex-end;background:var(--hi);color:var(--bg);max-width:85%}
+.m.b{background:color-mix(in srgb,var(--line) 55%,var(--surface))}
+#sugg{padding:0 12px;margin:0}#sugg .chip{font-size:13.5px;padding:3px 10px}
+#chatForm{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+#chatForm input{flex:1;min-width:0;padding:9px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+#chatForm .btn{padding:8px 14px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:820px){.hero{grid-template-columns:1fr}.fx{display:none}}
+/* device modes */
+.pc .hero{grid-template-columns:1.05fr 1fr}.pc .fx{display:flex}
+.mob .shell{max-width:430px;margin:0 auto;background:var(--bg);box-shadow:0 0 0 1px var(--line),0 12px 50px rgba(0,0,0,.25);min-height:100vh}
+.mob body{background:color-mix(in srgb,var(--bg) 88%,var(--ink))}
+.mob .hero{grid-template-columns:1fr}.mob .hero h1{font-size:44px}.mob section>h2{font-size:30px}.mob .fx{display:none}.mob .proj{grid-template-columns:1fr}.mob .brand{font-size:17px}
+.mob #fab{right:max(14px,calc(50% - 201px))}.mob #pop{right:max(8px,calc(50% - 207px))}
+/* ===== THEME 1: PYTHON (PyCharm Darcula / IntelliJ Light) ===== */
+html.sk-py[data-theme="dark"]{--bg:#2b2b2b;--surface:#3c3f41;--ink:#a9b7c6;--muted:#9b9b9b;--line:#4e5254;--accent:#cc7832;--hi:#cc7832;--amber:#ffc66d;--good:#6a8759;--kw:#cc7832;--st:#6a8759;--nm:#6897bb}
+html.sk-py[data-theme="light"]{--bg:#fff;--surface:#f2f2f2;--ink:#080808;--muted:#8c8c8c;--line:#d3d3d3;--accent:#0033b3;--hi:#0033b3;--amber:#9e880d;--good:#067d17;--kw:#0033b3;--st:#067d17;--nm:#1750eb}
+.sk-py{--fh:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;--fb:var(--fh);--fm:var(--fh)}
+.sk-py body{font-size:15px;line-height:1.7}
+.sk-py h1{font-size:clamp(32px,5.4vw,60px);letter-spacing:-.02em}
+.sk-py .role{color:var(--amber);font-size:18px}
+.sk-py section>h2{font-size:clamp(22px,3.2vw,32px);font-weight:700}
+.sk-py section>h2:before{content:"class ";color:var(--kw);font-weight:500}.sk-py section>h2:after{content:":"}
+.sk-py .sub:before{content:"# ";color:var(--muted)}
+.sk-py .panel,.sk-py .card,.sk-py .kpi,.sk-py .links>*,.sk-py .chip,.sk-py .btn,.sk-py .ib,.sk-py .sk,.sk-py dialog,.sk-py #pop,.sk-py .con{border-radius:3px}
+.sk-py .kpi b{color:var(--nm)}
+.sk-py .tags i{background:transparent;color:var(--st);border:1px solid var(--line);border-radius:3px;font-size:12.5px}
+.sk-py .tags i:before,.sk-py .tags i:after{content:"'"}
+.sk-py .tabs a:after,.sk-py .tabs button:after{content:".py";color:var(--muted);font-weight:400}.sk-py .tabs a,.sk-py .tabs button{font-size:14px}
+.sk-py .tabs a[aria-current=true],.sk-py .tabs button:hover{background:var(--surface)}
+.sk-py .brand span{color:var(--kw)}.sk-py .fx code{color:var(--st)}
+.sk-py .con{background:#1e1f22}.sk-py .con textarea{color:#6a8759}
+/* ===== THEME 2: SQL (query editor look) ===== */
+html.sk-sql[data-theme="dark"]{--bg:#1e1e1e;--surface:#252526;--ink:#d4d4d4;--muted:#9da3a8;--line:#3c3c3c;--accent:#569cd6;--hi:#569cd6;--amber:#dcdcaa;--good:#4ec9b0;--kw:#569cd6;--st:#ce9178;--nm:#b5cea8;--cm:#6a9955}
+html.sk-sql[data-theme="light"]{--bg:#fff;--surface:#f3f3f3;--ink:#1f1f1f;--muted:#5a5a5a;--line:#d0d0d0;--accent:#0000e6;--hi:#0000e6;--amber:#795e26;--good:#267f99;--kw:#0000e6;--st:#a31515;--nm:#098658;--cm:#008000}
+.sk-sql{--fh:'Fira Code',Consolas,ui-monospace,monospace;--fb:var(--fh);--fm:var(--fh)}
+.sk-sql body{font-size:15px;line-height:1.7}
+.sk-sql h1{font-size:clamp(32px,5.2vw,58px);letter-spacing:-.02em}
+.sk-sql .role{color:var(--amber);font-size:18px}
+.sk-sql section>h2{font-size:clamp(20px,3vw,30px);font-weight:700}
+.sk-sql section>h2:before{content:"SELECT * FROM [";color:var(--kw);font-weight:500}.sk-sql section>h2:after{content:"];";color:var(--ink)}
+.sk-sql .sub{color:var(--cm)}.sk-sql .sub:before{content:"-- "}
+.sk-sql .panel,.sk-sql .card,.sk-sql .kpi,.sk-sql .links>*,.sk-sql .chip,.sk-sql .btn,.sk-sql .ib,.sk-sql .sk,.sk-sql dialog,.sk-sql #pop,.sk-sql .con{border-radius:2px}
+.sk-sql .kpi{border-left:3px solid var(--accent)}.sk-sql .kpi b{color:var(--nm)}
+.sk-sql .card{border-top:2px solid var(--accent)}
+.sk-sql .tags i{background:transparent;color:var(--st);border:1px solid var(--line);border-radius:2px;font-size:12.5px}
+.sk-sql .tags i:before{content:"["}.sk-sql .tags i:after{content:"]"}
+.sk-sql .tabs a:after,.sk-sql .tabs button:after{content:".sql";color:var(--muted);font-weight:400}.sk-sql .tabs a,.sk-sql .tabs button{font-size:14px}
+.sk-sql .tabs a[aria-current=true],.sk-sql .tabs button:hover{background:var(--surface)}
+.sk-sql .brand span{color:var(--kw)}.sk-sql .fx code{color:var(--st)}
+.sk-sql .con{background:#1e1e1e;border:1px solid #3c3c3c}.sk-sql .con textarea{color:#ce9178}
+/* ===== THEME 3: POWER BI (report canvas look) ===== */
+html.sk-bi[data-theme="light"]{--bg:#f3f2f1;--surface:#fff;--ink:#252423;--muted:#605e5c;--line:#d2d0ce;--accent:#8a6d00;--hi:#f2c811;--amber:#0b7a75;--good:#0b7a75}
+html.sk-bi[data-theme="dark"]{--bg:#201f1e;--surface:#2b2a29;--ink:#f3f2f1;--muted:#b3b0ad;--line:#484644;--accent:#f2c811;--hi:#f2c811;--amber:#01b8aa;--good:#01b8aa}
+.sk-bi{--fh:"Segoe UI","Segoe UI Web",Selawik,system-ui,sans-serif;--fb:var(--fh)}
+.sk-bi body:before,.sk-bi header{background:#252423}
+.sk-bi header{color:#f3f2f1;border-bottom:3px solid #f2c811}
+.sk-bi .tabs a,.sk-bi .tabs button{color:#c8c6c4}.sk-bi .tabs a:hover,.sk-bi .tabs button:hover{color:#fff}
+.sk-bi .tabs a[aria-current=true]{color:#fff;border-bottom-color:#f2c811}.sk-bi .tabs a[aria-current=true] .ic{color:#f2c811}
+.sk-bi .fx{background:#323130;border-color:#484644}.sk-bi .fx i{color:#f2c811}.sk-bi .fx code{color:#c8c6c4}
+.sk-bi .ib{background:#323130;border-color:#484644;color:#f3f2f1}.sk-bi .ib[aria-pressed=true]{background:#f2c811;color:#252423;border-color:#f2c811}
+.sk-bi .brand span{color:#f2c811}
+.sk-bi h1{font-weight:700;letter-spacing:-.02em}
+.sk-bi section>h2{font-size:clamp(24px,3.2vw,32px);font-weight:600;border-left:6px solid #f2c811;padding-left:12px}
+.sk-bi .panel,.sk-bi .card,.sk-bi .kpi,.sk-bi .links>*,.sk-bi .sk,.sk-bi dialog,.sk-bi #pop{border:1px solid var(--line);border-radius:2px;box-shadow:0 1.6px 3.6px rgba(0,0,0,.13),0 .3px .9px rgba(0,0,0,.1)}
+.sk-bi .kpi{text-align:center;border-top:4px solid #f2c811}.sk-bi .kpi b{color:var(--ink);font-weight:600}
+.sk-bi .btn,.sk-bi .chip,.sk-bi .ib{border-radius:2px}
+.sk-bi .btn.p,.sk-bi .chip[aria-pressed=true],.sk-bi #fab,.sk-bi .av,.sk-bi .m.u{background:#f2c811;color:#252423;border-color:#f2c811}
+.sk-bi .tags i{background:color-mix(in srgb,#f2c811 28%,transparent);color:var(--ink);border-radius:2px}
+.sk-bi .job:before{border-color:#f2c811}.sk-bi .tl{border-left-color:#f2c811}
+.sk-bi .ph{background:#252423;color:#fff}.sk-bi .con{border-radius:2px}
+.sk-bi .sk[aria-pressed=true]{border-color:#f2c811;box-shadow:0 0 0 2px #f2c811}.sk-bi .sk em{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+ <div class="wrap bar"><b class="brand">J_A_Ranjith<span>.analytics</span></b><div class="fx"><i>fx</i><code id="fx">=VIEW("Home")</code></div>
+  <div class="ctl"><button class="ib" id="theme" type="button" aria-label="Switch light or dark mode" title="Light / dark mode"></button><button class="ib" id="mPc" type="button" aria-label="Desktop view" title="Desktop view"></button><button class="ib" id="mMob" type="button" aria-label="Mobile view" title="Mobile view"></button></div></div>
+ <nav class="wrap tabs" id="tabs" aria-label="Sections"></nav><div id="prog"></div>
+</header>
+<main class="wrap">
+<div class="panel tp" id="themes"><h2>This page comes in four themes</h2><p>You can view this portfolio in four different looks: Python, SQL, Power BI or Neutral. The content is the same in every theme. Tap one below and the whole site restyles instantly. Your choice is remembered on this device.</p><div class="sk4" id="sk4" role="group" aria-label="Choose a portfolio theme"></div></div>
+<div class="hero" id="home">
+ <div><h1 id="name"></h1><div class="role" id="role"></div><p id="summary"></p><div class="btns" id="heroBtns"></div></div>
+ <div class="panel" id="stack"></div>
+</div>
+<section id="dashboard"><h2>Impact dashboard</h2><p class="sub">Filter it like a Power BI slicer. Pick a source to change the tiles.</p><div class="chips" id="slicer" role="group" aria-label="Dashboard slicer"></div><div class="kpis" id="kpis"></div><p class="note" id="policy"></p></section>
+<section id="projects"><h2>Projects</h2><p class="sub">Query my work with SQL, or tap an example. Supported: WHERE tools LIKE, WHERE company =, ORDER BY title, LIMIT.</p><div class="con"><textarea id="sqlIn" rows="2" aria-label="SQL query" spellcheck="false"></textarea><div><button id="run" type="button">Run query</button><span id="sqlOut"></span></div></div><div class="chips" id="chips" role="group" aria-label="Example queries"></div><div class="proj" id="proj"></div></section>
+<section id="toolbox"><h2>Tech stack</h2><p class="sub">Tools I use to clean, model, automate and present data.</p><div class="g" id="skills"></div></section>
+<section id="experience"><h2>Experience</h2><p class="sub">Eight years across catalog operations, analytics and civil engineering.</p><div class="tl" id="jobs"></div></section>
+<section id="more"><h2>More from me</h2><p class="sub">What I’m learning next, and dashboards I’ve built.</p><div class="g" id="extra"></div></section>
+<section id="credentials"><h2>Resume and credentials</h2><div class="panel" style="margin-bottom:18px"><h3>My resume</h3><p class="sub" style="margin:6px 0 14px">Download the full resume as a Word file.</p><a class="btn p" id="resume" download>Download resume</a></div><div class="g" id="creds"></div></section>
+<section id="contact"><h2>Let’s talk data</h2><p class="sub" id="loc"></p><div class="links" id="links"></div></section>
+</main>
+<footer class="wrap">© Joan Anto Ranjith</footer>
+</div>
+<dialog id="pd" aria-label="Project details"><button class="x" type="button" id="pdx" aria-label="Close">×</button><div id="pdBody"></div></dialog>
+<button id="fab" type="button" aria-label="Open portfolio assistant" aria-expanded="false"></button>
+<div id="pop" role="dialog" aria-label="Portfolio assistant" hidden><div class="ph"><span class="av" id="phIc"></span><b>Portfolio assistant</b><button id="pc" type="button" aria-label="Close chat">×</button></div><div id="msgs" aria-live="polite"></div><div class="chips" id="sugg"></div><form id="chatForm"><input id="q" aria-label="Your question" placeholder="Ask about experience, tools..." autocomplete="off"><button class="btn p" type="submit">Ask</button></form></div>
+<script>
+/* ================= EDIT YOUR CONTENT HERE ================= */
+const DATA = {
+ defaultSkin:"py", /* first theme a visitor sees: py, sql, bi or n (neutral) */
+ name:"Joan Anto Ranjith",
+ role:"Data Analyst | Analytics & Automation Professional",
+ summary:"Operations and Automation Professional with 8+ years of industry experience, specializing in Python automation, SQL, Power BI, and data-driven problem-solving. Passionate about turning complex data into actionable insights and building solutions that improve business efficiency.",
+ location:"Chennai, India",
+ email:"joanantoranjith@gmail.com", phone:"+91 9790371605",
+ resume:"Joan_Anto_Ranjith_Resume.docx",
+ links:[["LinkedIn","http://www.linkedin.com/in/joan-anto-ranjith","linkedin.com/in/joan-anto-ranjith"],["GitHub","https://github.com/JoanAntoRanjith","github.com/JoanAntoRanjith"]],
+ policy:"Original data, internal datasets, internal tool names and key business metrics from my Amazon work are not shown here because of company policy. These projects explain the idea and the problem they solved. The figures on this page come from my resume and my own solution documents.",
+ kpis:[["200K+","ASINs a day automated, up from about 300","Amazon"],["98.7%","accuracy in sample audits of the LNA automation","Amazon"],["1,000+","hours of associate effort saved","Amazon"],["15–25 min","to collect missing title attributes for 500+ ASINs, down from 3–4 hours","Amazon"],["6","manual internal reports automated end to end","Amazon"],["60+ min","manual upload cycle (20 sheets) turned into one unattended run","Amazon"],["150%","productivity leading 7 associates","Amazon"],["4.57%","drop in electricity units used after dashboard-led changes","Hostel project"]],
+ projects:[
+  {title:"LNA Inflow Analysis Automation",context:"Amazon, EU9 Marketplace Launch Program",company:"Amazon",logo:true,art:"pipeline",image:"",tags:["Python","Pandas","NumPy","OpenPyXL","Automation"],
+   points:["Built a five-stage workflow covering duplicate detection, ASIN validation, leaf-node analysis, brand/GL enrichment and historical processing checks.","Standardised ASINs, applied leaf-node score criteria and excluded restricted or invalid records across 20+ inflow files a month.","One click runs the full analysis, builds a structured Excel file with classification summaries and emails it to stakeholders through Outlook.","Selected on Amazon Idea Central and adopted by EU10 teams for recurring inflow analysis."]},
+  {title:"End-to-End Reporting Automation for SL and HL Reactive Variations",context:"Amazon, internal operational reporting",company:"Amazon",logo:true,art:"report",image:"",tags:["Python","Automation","Excel","Email automation","Data validation"],
+   problem:"The team prepared six internal operational reports by hand: the Daily Report, 48 Hours Report, Day 1 Miss Report, OOSLA Report, Weekly Resolved Report and Monthly Resolved Report. Each one took about 30 minutes, because someone had to extract the data, apply filters, validate it, format the report and run quality checks.",
+   solution:["Built one Python automation that produces all six reports.","Exports the data from the source systems and processes it with predefined business logic.","Runs validation checks before anything is released.","Generates standardised, formatted reports and sends them by email automatically."],
+   impact:"The repeated manual work of about 30 minutes per report is removed, and every report follows the same format and checks."},
+  {title:"SC Upload Automation",context:"Amazon, Catalog Data Quality",company:"Amazon",logo:true,art:"upload",image:"",tags:["Python","Selenium","Tkinter","pandas","Automation"],
+   problem:"Catalog Data Quality teams submit batch attribute corrections as Excel workbooks, where every sheet is a separate batch. An operator had to submit each sheet by hand: fill in the reference, upload the same file again with a different sheet number, wait for success and note the confirmation link. A workbook with 20 sheets took over an hour, wrong or skipped sheets were easy to miss, and there was no audit trail.",
+   solution:["Built a Python desktop app (Selenium and Tkinter): the operator picks the workbook and the tool does the rest.","Submits every sheet in turn, checks that the right sheet number was entered, and confirms each success message.","Waits longer for big batches and shorter for small ones, based on the number of ASINs in the sheet.","Retries failed sheets up to two more times, then lists any that still need manual follow-up.","Saves a CSV of submission links and ASIN counts, plus timestamped logs, as an audit trail."],
+   impact:"A 60+ minute manual cycle for 20 sheets became one file selection and an unattended run, with fewer input errors and a complete record of what was submitted."},
+  {title:"Title Defect Action: Missing Attribute Value Download",context:"Amazon, Catalog Data Quality",company:"Amazon",logo:true,art:"title",image:"",tags:["Python","Selenium","pandas","Excel","PyInstaller"],
+   problem:"Product titles must contain every mandatory attribute for their product type. When one is missing, a title defect action is raised and an associate must first find the correct value in an internal catalog tool for the Amazon.de marketplace. That lookup meant searching ASINs, translating attribute names by hand (for example “age range description” must be typed as age_range_description), exporting the results and copying values one by one. For 500+ ASINs it took 3–4 hours before the title could even be corrected.",
+   solution:["Built a Python and Selenium tool that reads the defect sheet and finds each ASIN’s missing attributes.","Converts attribute names automatically (spaces to underscores, slashes to dots) and handles ASINs with several missing attributes.","Runs one search and one export for the whole batch, then reads the export and matches each ASIN to its missing value.","Writes a clean Excel file with one row per ASIN, missing attribute and value.","Runs on a second virtual desktop so the associate can keep working, and can be shared as a standalone .exe file."],
+   impact:"About 3–4 hours of lookup per 500 ASINs came down to about 15–25 minutes, tested on 500+ ASINs and 115 unique attributes. Scope: the automation covers the value download only. Updating the titles is still done by the associate."},
+  {title:"Brand Name Inconsistency: Vendor Contributions in EU9 Marketplaces",context:"Amazon, Advanced Tech Training (SQL project)",company:"Amazon",logo:true,art:"sql",image:"",tags:["SQL","Data modelling","Data quality","Root-cause analysis"],
+   problem:"When fixing broken variations, we often find ASINs with wrong or inconsistent attributes such as brand, department, model name, colour and size. The causes are spelling errors, special characters, values that are not localised and wrong size formats. Many start with inaccurate vendor data in the bulk product-creation process, where the template has no standard, marketplace-aligned values. The errors then spread from the source marketplace into other EU marketplaces, causing attribute collisions, inconsistent data and variation problems in many regions.",
+   solution:["Designed a SQL project to bring key ASIN information into one data source. No existing tool showed it together.","Tracks when an ASIN was created and who first updated its attributes.","Records the source and target marketplaces, the responsible teams, the contributors and the tools used for each change.","Gives teams one view for tracking, accountability and data quality, so problems can be fixed at the root and vendors supply correct values from the start."]},
+  {title:"Hostel Electricity Billing & Analytics Platform",context:"Personal capstone project",company:"Personal",art:"meter",
+   image:"images/dashboard-executive.png",
+   tags:["Python","Streamlit","Supabase","Power BI","SQL"],
+   points:["Built a database-backed billing app for an 8-room, 33-tenant hostel that manages tenants, occupancy, meter readings and billing cycles.","Automated billing from actual meter consumption and tenant stay duration, across 2 room types and 3 unit rates.","Built a Power BI dashboard published to Power BI Service, connected to Supabase with scheduled refresh, showing the highest and lowest usage room each month.","Usage-reduction measures based on the dashboard cut total units consumed by 4.57%."],
+   detail:{overview:"End-to-end electricity billing for a hostel. Meter readings sit in a Supabase database, each tenant’s bill is calculated from their actual consumption and days stayed, and Power BI dashboards show usage, payments and room-level patterns for the owner.",
+    more:["The executive dashboard shows 8 rooms, 8,288 units consumed and a total electricity bill of about ₹114.5K.","AC rooms drive roughly 94% of consumption, and the average is about 518 units per room.","About 66% of the billed amount was still pending at the time of the snapshot, which the dashboard makes visible.","The tenant and payment page compares bills by room across two billing cycles. Room 7 is the highest-billed room and room 6 the lowest."],
+    links:[{label:"View code on GitHub",url:"https://github.com/JoanAntoRanjith/Hostel-Electricity-Billing"},{label:"View live Power BI dashboard",url:"https://app.powerbi.com/view?r=REPLACE_WITH_YOUR_REPORT_LINK"}],
+    shots:[{src:"images/dashboard-executive.png",caption:"Executive management dashboard"},{src:"images/dashboard-tenant-payments.png",caption:"Tenant and payment analysis"}]}},
+  {title:"Chennai Flood Risk Investigation",context:"Personal portfolio project",company:"Personal",art:"rain",image:"",tags:["Python","EDA","Sweetviz","Matplotlib","Seaborn","Plotly"],
+   points:["Analysed 30+ years of Chennai rainfall data for seasonal patterns, variability, extreme events and Northeast Monsoon behaviour.","Ran manual EDA on data quality, time series, outliers and correlations, then compared it with automated EDA to see what each approach finds and misses."],
+   detail:{overview:"An exploratory analysis of three decades of Chennai rainfall. Add your key findings, charts and the notebook link here.",more:["Add more detail here, such as the data source and your main findings."],links:[],shots:[]}}
+ ],
+ sqlPresets:["SELECT * FROM projects;","SELECT * FROM projects WHERE tools LIKE '%Python%';","SELECT * FROM projects WHERE tools LIKE '%SQL%';","SELECT * FROM projects WHERE tools LIKE '%Selenium%';","SELECT * FROM projects WHERE tools LIKE '%Power BI%';","SELECT * FROM projects WHERE company = 'Amazon';","SELECT * FROM projects ORDER BY title LIMIT 3;"],
+ jobs:[
+  {logo:"amazon",title:"Catalog Lead | Senior Associate – Catalog",when:"Sep 2020 – Present",points:["Developed Python-based LNA automation that scaled processing from ~300 to 200K–300K ASINs/day, achieving 98.7% accuracy in sample audits and saving 1,000+ hours of associate effort.","Developed a Python automation to streamline five stages of LNA inflow analysis, saving ~2 hours per inflow across 20+ monthly inflows (40+ hours/month).","Submitted the LNA automation to Amazon Idea Central, where it was selected and subsequently adopted by EU10 teams for recurring inflow analysis.","Led a team of 7 associates across Poland, Sweden, and Belgium, using Power BI and QuickSight dashboards to track productivity, quality, and SLA performance, achieving 150% productivity, 100% quality, and 98% SLA adherence.","Onboarded 12+ operational processes through cross-functional knowledge transfer, pilot testing, team training, SOP development, and production ramp-up.","Conducted data-driven WBRs, MBRs, and monthly scorecards, analyzing KPI trends and performance gaps to provide insights and improvement actions to leadership.","Built AI-powered agents and workflows using Amazon Quick to automate data analysis, Excel summarization, visualization, and repetitive tasks, leveraging tools such as Graphify, Autograph, AImplify, and Artifactory."]}
+ ],
+ moreJobsTitle:"Additional Professional Experience",
+ moreJobs:[
+  /* logo: put the company logo in the images folder, e.g. "images/keechery-logo.png". Until then the short name shows. */
+  {logo:"images/keechery-logo.png",short:"Keechery",org:"Keechery Engineering & Co. (Space n Design)",title:"Project Engineer",when:"Oct 2019 – Jul 2020",points:["Managed project execution, scheduling, measurements, reporting, billing, and resource coordination across civil and MEP works for commercial projects."]},
+  {logo:"images/aarvee-logo.png",short:"Aarvee",org:"Aarvee Associates Architect Engineers & Consultants Pvt. Ltd.",title:"Engineer",when:"May 2018 – Oct 2019",points:["Supported land acquisition, feasibility studies, surveying, valuation, project scheduling, and coordination with NHAI, government authorities, and project teams for NH-332A four-laning."]}
+ ],
+ skills:{"Data analytics":["Python","SQL","Pandas","NumPy","Statistics","Data cleaning","EDA","Git","ETL","Business insights"],"Business intelligence":["Excel","Power BI","Power Query","DAX","Data modelling","QuickSight","Tableau","Looker","Alteryx"],"Python & automation":["OpenPyXL","Matplotlib","Seaborn","Plotly","Streamlit","PySpark","Requests","BeautifulSoup","Selenium"],"Databases & platforms":["MySQL","PostgreSQL","Supabase","MongoDB","Snowflake","Data pipelines"],"AI & modern analytics":["AI agents","AI-assisted analysis","Workflow automation","MCP-enabled workflows"]},
+ extra:[
+  {title:"Currently exploring",wide:true,groups:{"Data visualization":["Looker","Alteryx"],"Cloud and big data":["AWS","Azure","Databricks","Hive"],"AI":["Gen AI","AI Agents","LLM","MCP-enabled workflows"],"Low-code":["Power Platform"],"Methods":["Advanced DAX","Data modelling"]}},
+  {title:"Data stories",items:["Case studies and write-ups are coming soon.","Add a story: the question, the data, the method and the result."]},
+  {title:"Dashboards gallery",wide:true,images:[{src:"images/dashboard-executive.png",caption:"Hostel electricity and billing: executive management dashboard (Power BI)"},{src:"images/dashboard-tenant-payments.png",caption:"Hostel electricity and billing: tenant and payment analysis (Power BI)"}]}
+ ],
+ certs:["Python: IBM (2023), Amazon ACES (2024), Codebasics (2026)","SQL: 360DigiTMG (2023), Amazon ACES (2024), Codebasics (2026)","Power BI Data Analytics: Codebasics (2026)","Data Science using Python: 360DigiTMG (2023)","Tableau Desktop Certified Professional: 360DigiTMG (2023)"],
+ awards:["4x Top Performer Award (#1 ranking) at Amazon","RBS Quality Gold and Silver Medals at Amazon","HackerRank Gold Star badges in SQL and Python"],
+ education:"B.E. Civil Engineering, Sethu Institute of Technology, Madurai (2014–2018), CGPA 8.65/10",
+ languages:"English, Tamil, Hindi, Swedish (A2)"
+};
+/* =========================================================== */
+const $=id=>document.getElementById(id),L=s=>s.toLowerCase(),R=document.documentElement;
+const sysDark=()=>matchMedia("(prefers-color-scheme:dark)").matches;
+const li=a=>a.map(x=>`<li>${x}</li>`).join(""),tg=a=>a.map(t=>`<i>${t}</i>`).join("");
+const IC={sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',moon:'<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>',pc:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',mob:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',bot:'<rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V5"/><circle cx="12" cy="3.6" r="1.2"/><circle cx="9" cy="13" r="1.3" fill="currentColor"/><circle cx="15" cy="13" r="1.3" fill="currentColor"/><path d="M9.5 16.5h5M2 12v3M22 12v3"/>'};
+const svg=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+const LOGO=`<svg class="logo" viewBox="0 0 90 30" role="img" aria-label="Amazon"><text x="2" y="17" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="19" fill="currentColor">amazon</text><path d="M8 22Q38 31 68 21" stroke="#ff9900" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M64 17.5L69 21L63 24" stroke="#ff9900" stroke-width="2.2" fill="none"/></svg>`;
+// theme (skin) definitions: name, description, logo, default light/dark mode, pie colours
+const SK={
+ py:{n:"Python",d:"A PyCharm-style code editor, in dark or light.",m:"dark",pal:["#cc7832","#6a8759","#6897bb","#9876aa","#ffc66d"],l:`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 2C7.5 2 7.8 3.9 7.8 3.9V6h4.2v.7H5.9S2.5 6.3 2.5 11s3 4.6 3 4.6h1.8v-2.2s-.1-3 2.9-3h4.2s2.8 0 2.8-2.7V4.9S17.6 2 11.9 2z" fill="#3776ab"/><circle cx="9.4" cy="4.5" r=".9" fill="#fff"/><path d="M12.1 22c4.4 0 4.1-1.9 4.1-1.9V18h-4.2v-.7h6.1s3.4.4 3.4-4.3-3-4.6-3-4.6h-1.8v2.2s.1 3-2.9 3H9.6s-2.8 0-2.8 2.7v4.4S6.4 22 12.1 22z" fill="#ffd43b"/><circle cx="14.6" cy="19.5" r=".9" fill="#fff"/></svg>`},
+ sql:{n:"SQL",d:"A query editor with keywords and comments.",m:"dark",pal:["#569cd6","#ce9178","#4ec9b0","#dcdcaa","#b5cea8"],l:`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#569cd6" stroke-width="1.7" stroke-linecap="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>`},
+ bi:{n:"Power BI",d:"A report canvas with visual cards and a yellow ribbon.",m:"light",pal:["#01b8aa","#374649","#fd625e","#f2c811","#8ad4eb"],l:`<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="5" height="10" rx="1.2" fill="#f8d84a"/><rect x="9.5" y="6" width="5" height="15" rx="1.2" fill="#f2c811"/><rect x="16" y="2" width="5" height="19" rx="1.2" fill="#d99a00"/></svg>`},
+ n:{n:"Neutral",d:"The clean, everyday look that follows your device setting.",m:null,pal:["#2748d8","#c98a00","#0c8f7e","#b4429c","#e0533d"],l:`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18z" fill="currentColor"/></svg>`}
+};
+let PAL=SK.n.pal,userMode=false;
+$("name").textContent=DATA.name;$("role").textContent=DATA.role;$("summary").textContent=DATA.summary;$("policy").textContent=DATA.policy;
+$("heroBtns").innerHTML=`<a class="btn p" href="#projects">See my projects</a><a class="btn" href="#credentials">Get my resume</a>`;$("resume").href=DATA.resume;
+$("sk4").innerHTML=["py","sql","bi","n"].map(k=>`<button class="sk" type="button" data-sk="${k}" aria-pressed="false">${SK[k].l}<b>${SK[k].n} <em>(active)</em></b><span>${SK[k].d}</span></button>`).join("");
+$("sk4").addEventListener("click",e=>{const b=e.target.closest("[data-sk]");if(b)skin(b.dataset.sk)});
+// header tabs, formula bar, progress
+const TABS=[["dashboard","Impact"],["projects","Projects"],["toolbox","Tech stack"],["experience","Experience"],["more","More"],["credentials","Resume"],["contact","Contact"]];
+$("tabs").innerHTML=TABS.map(t=>`<a href="#${t[0]}" data-s="${t[0]}"><i class="ic"></i>${t[1]}</a>`).join("")+`<button type="button" id="askTab"><i class="ic"></i>Ask</button>`;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;$("fx").textContent=`=VIEW("${(TABS.find(t=>t[0]==id)||[0,"Home"])[1]}")`;document.querySelectorAll("#tabs a").forEach(a=>a.dataset.s==id?a.setAttribute("aria-current","true"):a.removeAttribute("aria-current"))}}),{rootMargin:"-30% 0px -60% 0px"});
+["home",...TABS.map(t=>t[0])].forEach(id=>io.observe($(id)));
+addEventListener("scroll",()=>{$("prog").style.width=Math.min(100,scrollY/(document.body.scrollHeight-innerHeight)*100)+"%"},{passive:true});
+// light/dark mode + device mode
+const dark=()=>R.dataset.theme=="dark";
+const iconT=()=>{$("theme").innerHTML=svg(dark()?"sun":"moon")};
+$("theme").onclick=()=>{userMode=true;R.dataset.theme=dark()?"light":"dark";iconT()};
+$("mPc").innerHTML=svg("pc");$("mMob").innerHTML=svg("mob");
+function mode(m){R.classList.toggle("pc",m=="pc");R.classList.toggle("mob",m=="mob");$("mPc").setAttribute("aria-pressed",m=="pc");$("mMob").setAttribute("aria-pressed",m=="mob");$("vp").content=m=="pc"?"width=1100":"width=device-width, initial-scale=1, viewport-fit=cover"}
+$("mPc").onclick=()=>mode("pc");$("mMob").onclick=()=>mode("mob");
+$("mPc").setAttribute("aria-pressed",innerWidth>=820);$("mMob").setAttribute("aria-pressed",innerWidth<820);
+// apply one of the four themes
+function skin(k){if(!SK[k])k="n";["py","sql","bi"].forEach(x=>R.classList.toggle("sk-"+x,x==k));PAL=SK[k].pal;
+ if(!userMode)R.dataset.theme=SK[k].m||(sysDark()?"dark":"light");iconT();drawStack();
+ document.querySelectorAll(".sk").forEach(b=>b.setAttribute("aria-pressed",b.dataset.sk==k));try{localStorage.setItem("skin",k)}catch(e){}}
+// dashboard slicer
+let area="All";const areas=["All",...new Set(DATA.kpis.map(k=>k[2]))];
+function drawDash(){$("slicer").innerHTML=areas.map(a=>`<button class="chip" type="button" aria-pressed="${a==area}" data-a="${a}">${a}</button>`).join("");
+ $("kpis").innerHTML=DATA.kpis.filter(k=>area=="All"||k[2]==area).map(k=>`<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join("")}
+$("slicer").addEventListener("click",e=>{const t=e.target.closest("[data-a]");if(t){area=t.dataset.a;drawDash();$("slicer").querySelector(`[data-a="${area}"]`).focus()}});drawDash();
+// tech stack donut (click a slice)
+let si=0;
+function drawStack(){const e=Object.entries(DATA.skills),tot=e.reduce((a,[,v])=>a+v.length,0);let off=25;
+ const arcs=e.map(([k,v],i)=>{const p=v.length/tot*100,o=off;off-=p;const on=i==si;return `<circle data-k="${i}" tabindex="0" role="button" aria-label="${k}, ${v.length} tools" cx="21" cy="21" r="15.915" fill="none" stroke="${PAL[i%5]}" stroke-width="${on?9:6.5}" stroke-dasharray="${p-.6} ${100-p+.6}" stroke-dashoffset="${o}" opacity="${on?1:.55}" style="cursor:pointer"/>`}).join("");
+ const [k,v]=e[si];
+ $("stack").innerHTML=`<h2>Tech stack known</h2><small>Click a slice or a name to see the tools inside it.</small><div class="pie"><svg width="170" height="170" viewBox="0 0 42 42" role="group" aria-label="Tech stack donut chart">${arcs}<text x="21" y="22" text-anchor="middle" style="font:700 7px sans-serif;fill:var(--ink)">${tot}</text><text x="21" y="26.5" text-anchor="middle" style="font:400 2.8px sans-serif;fill:var(--muted)">tools</text></svg><div class="leg">${e.map(([k,v],i)=>`<button type="button" data-k="${i}" aria-pressed="${i==si}"><b style="background:${PAL[i%5]}"></b>${k} (${v.length})</button>`).join("")}</div></div><div class="pick"><h3>${k}</h3><div class="tags">${tg(v)}</div></div>`}
+const pick=e=>{const t=e.target.closest("[data-k]");if(t){si=+t.dataset.k;drawStack();$("stack").querySelector(`circle[data-k="${si}"]`).focus()}};
+$("stack").addEventListener("click",pick);$("stack").addEventListener("keydown",e=>{if((e.key=="Enter"||e.key==" ")&&e.target.matches("circle")){e.preventDefault();pick(e)}});
+// project header art
+const art=k=>{const F='<defs><linearGradient id="g'+k+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2b55"/><stop offset="1" stop-color="#0d1427"/></linearGradient></defs><rect width="420" height="160" fill="url(#g'+k+')"/>'+[40,80,120].map(y=>`<line x1="0" x2="420" y1="${y}" y2="${y}" stroke="#fff" opacity=".08"/>`).join("");let g="";
+ const C=["#8fa6ff","#f2b84b","#3cc9b4"],T=(x,y,s)=>`<text x="${x}" y="${y}" fill="#e8edf7" font-size="11">${s}</text>`;
+ if(k=="pipeline")g=[0,1,2,3,4].map(i=>`<rect x="${34+i*72}" y="${40+i*6}" width="50" height="${70-i*10}" rx="6" fill="${C[i%3]}" opacity=".9"/>${i<4?`<path d="M${88+i*72} 75 h18" stroke="#fff" stroke-width="2"/>`:""}`).join("")+T(34,142,"duplicates → ASIN checks → leaf nodes → enrich → history");
+ if(k=="report")g=[0,1,2,3,4,5].map(i=>`<rect x="${32+i*62}" y="${34+(i%2)*10}" width="48" height="62" rx="4" fill="#fff" opacity=".92"/><path d="M${40+i*62} ${50+(i%2)*10}h32M${40+i*62} ${60+(i%2)*10}h32M${40+i*62} ${70+(i%2)*10}h22" stroke="${C[i%3]}" stroke-width="3"/>`).join("")+T(32,134,"6 reports → one automated run → email");
+ if(k=="upload")g=[0,1,2,3].map(i=>`<rect x="${40+i*86}" y="${48}" width="64" height="50" rx="5" fill="${C[i%3]}" opacity=".85"/><path d="M${72+i*86} 88V62m-8 8l8-8 8 8" stroke="#16213a" stroke-width="3" fill="none"/>`).join("")+T(40,134,"sheet 1 → sheet 2 → sheet 3 … retry → CSV audit log");
+ if(k=="title")g=`<rect x="34" y="34" width="150" height="90" rx="6" fill="#fff" opacity=".92"/><path d="M48 54h110M48 70h80M48 86h96M48 102h60" stroke="#16213a" stroke-width="4"/><path d="M200 80h50" stroke="#fff" stroke-width="3"/><path d="M244 72l10 8-10 8" stroke="#fff" stroke-width="3" fill="none"/><rect x="262" y="34" width="124" height="90" rx="6" fill="#3cc9b4" opacity=".9"/><path d="M276 54h96M276 70h96M276 86h96M276 102h96" stroke="#0d1427" stroke-width="3"/>`;
+ if(k=="sql")g=`<ellipse cx="90" cy="48" rx="46" ry="14" fill="#8fa6ff"/><path d="M44 48v60c0 8 20 14 46 14s46-6 46-14V48" fill="#5f7bf0" opacity=".9"/><path d="M160 80h70M222 72l10 8-10 8" stroke="#fff" stroke-width="3" fill="none"/>`+[0,1,2].map(i=>`<rect x="250" y="${44+i*26}" width="${130-i*24}" height="18" rx="3" fill="${C[i]}"/>`).join("");
+ if(k=="meter")g=[50,78,64,102,88,120,70,96].map((h,i)=>`<rect x="${30+i*40}" y="${135-h}" width="26" height="${h}" rx="3" fill="${i>4?"#3cc9b4":"#8fa6ff"}"/>`).join("")+`<path d="M30 70 L110 55 L190 62 L270 40 L350 30 L390 28" stroke="#f2b84b" stroke-width="3" fill="none"/>`;
+ if(k=="rain")g=`<path d="M0 110 Q40 40 80 90 T160 70 T240 100 T320 30 T420 80" stroke="#8fa6ff" stroke-width="3" fill="none"/><path d="M0 125 Q60 95 120 118 T240 110 T420 120" stroke="#3cc9b4" stroke-width="2" fill="none"/>`+[60,140,230,300,360].map((x,i)=>`<path d="M${x} ${20+i*9} q-5 10 0 14 q5 -4 0 -14z" fill="#f2b84b"/>`).join("");
+ return `<svg viewBox="0 0 420 160" role="img" aria-label="Illustration of the ${k} project">${F}${g}</svg>`};
+const head=p=>`<div class="hd">${p.image?`<img src="${p.image}" alt="${p.title} header image">`:art(p.art||"pipeline")}${p.logo?`<div class="lg">${LOGO}</div>`:""}</div>`;
+// SQL runner + project cards
+function runSQL(q){const m=q.match(/like\s+'%?([^'%]+)%?'/i),c=q.match(/company\s*=\s*'([^']+)'/i),l=q.match(/limit\s+(\d+)/i);
+ if(!/^\s*select\s+[\s\S]+\s+from\s+projects/i.test(q))return{err:"Start with: SELECT * FROM projects ..."};
+ let r=DATA.projects.filter(p=>(!m||p.tags.some(t=>L(t).includes(L(m[1]))))&&(!c||L(p.company||"Personal")==L(c[1])));
+ if(/order by title/i.test(q))r=[...r].sort((a,b)=>a.title.localeCompare(b.title));if(l)r=r.slice(0,+l[1]);return{rows:r}}
+const links=a=>(a||[]).map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join("");
+function more(p){return p.problem?`<details><summary>Problem and solution</summary><h4 class="pb">The problem</h4><p>${p.problem}</p><h4 class="pb">The solution</h4><ul>${li(p.solution)}</ul>${p.impact?`<h4 class="pb">Impact</h4><p>${p.impact}</p>`:""}</details>`:`<details><summary>What I built</summary><ul>${li(p.points)}</ul></details>`}
+function card(p){const d=p.detail,i=DATA.projects.indexOf(p);
+ return `<article class="card">${head(p)}<div class="in"><h3>${p.title}</h3><div class="ctx">${p.context}</div><div class="tags">${tg(p.tags)}</div>${d?`<div class="acts"><button class="btn p" type="button" data-open="${i}">Explore project</button>${links(d.links)}</div>`:more(p)}${p.logo?`<p class="note">Original data and key metrics are not shown due to company policy.</p>`:""}</div></article>`}
+function go(q){$("sqlIn").value=q;const r=runSQL(q);$("sqlOut").textContent=r.err||`${r.rows.length} row${r.rows.length==1?"":"s"} returned`;$("proj").innerHTML=r.err?"":(r.rows.length?r.rows.map(card).join(""):"<p>No rows match this query.</p>")}
+$("chips").innerHTML=DATA.sqlPresets.map((q,i)=>`<button class="chip" type="button" data-i="${i}">${q.replace("SELECT * FROM projects","").replace(";","").trim()||"All projects"}</button>`).join("");
+$("chips").addEventListener("click",e=>{const t=e.target.closest("[data-i]");if(t)go(DATA.sqlPresets[t.dataset.i])});
+$("run").onclick=()=>go($("sqlIn").value);$("sqlIn").addEventListener("keydown",e=>{if(e.key=="Enter"&&(e.ctrlKey||e.metaKey)){e.preventDefault();go($("sqlIn").value)}});go(DATA.sqlPresets[0]);
+// project detail dialog
+$("proj").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(!b)return;const p=DATA.projects[+b.dataset.open],d=p.detail,s=d.shots||[];
+ $("pdBody").innerHTML=`${head(p)}<div class="in"><h3 style="font-size:28px">${p.title}</h3><div class="ctx">${p.context}</div><div class="tags">${tg(p.tags)}</div><p>${d.overview}</p>${(d.links||[]).length?`<div class="acts">${links(d.links)}</div>`:""}<h3 class="h4">What I did</h3><ul>${li([...p.points,...(d.more||[])])}</ul><h3 class="h4">Screenshots</h3><div class="shots">${s.length?s.map(x=>`<figure><a href="${x.src}" target="_blank" rel="noopener"><img loading="lazy" src="${x.src}" alt="${x.caption||p.title}"></a><figcaption>${x.caption||""}</figcaption></figure>`).join(""):[1,2,3].map(()=>`<div class="ph0">Screenshot coming soon</div>`).join("")}</div></div>`;$("pd").showModal()});
+$("pdx").onclick=()=>$("pd").close();$("pd").addEventListener("click",e=>{if(e.target==$("pd"))$("pd").close()});
+// experience: role, then company logo, then duration
+const job=j=>`<div class="job"><h3>${j.title}</h3><div class="clg">${j.logo=="amazon"?LOGO:`<img class="clogo" src="${j.logo}" alt="${j.short||j.org}" data-s="${j.short||j.org}">`}</div><div class="when">${j.when}</div><ul>${li(j.points)}</ul></div>`;
+$("jobs").innerHTML=DATA.jobs.map(job).join("")+`<h3 class="grp">${DATA.moreJobsTitle}</h3>`+DATA.moreJobs.map(job).join("");
+document.querySelectorAll("img.clogo").forEach(i=>i.onerror=()=>{const s=document.createElement("span");s.className="cn";s.textContent=i.dataset.s;i.replaceWith(s)});
+$("skills").innerHTML=Object.entries(DATA.skills).map(([k,v])=>`<div class="card"><h3>${k}</h3><div class="tags" style="margin:0">${tg(v)}</div></div>`).join("");
+$("extra").innerHTML=DATA.extra.map(x=>`<div class="card ${x.wide?"span":""}"><h3>${x.title}</h3>${x.items?`<ul>${li(x.items)}</ul>`:""}${x.groups?Object.entries(x.groups).map(([k,v])=>`<div class="gl">${k}</div><div class="tags" style="margin:4px 0 0">${tg(v)}</div>`).join(""):""}${x.images?`<div class="gal" style="margin-top:12px">${x.images.map(m=>`<figure><a href="${m.src}" target="_blank" rel="noopener"><img loading="lazy" src="${m.src}" alt="${m.caption}"></a><figcaption>${m.caption}</figcaption></figure>`).join("")}</div>`:""}</div>`).join("");
+$("creds").innerHTML=`<div class="card"><h3>Certifications</h3><ul>${li(DATA.certs)}</ul></div><div class="card"><h3>Awards and badges</h3><ul>${li(DATA.awards)}</ul></div><div class="card"><h3>Education and languages</h3><ul><li>${DATA.education}</li><li>Languages: ${DATA.languages}</li></ul></div>`;
+const digits=DATA.phone.replace(/\D/g,"");
+$("loc").textContent=`Based in ${DATA.location}. Choose where to find me.`;
+$("links").innerHTML=DATA.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener"><b>${l[0]}</b><span>${l[2]}</span></a>`).join("")+`<a href="mailto:${DATA.email}"><b>Email</b><span>${DATA.email}</span></a><div><b>Phone / WhatsApp</b><a href="tel:+${digits}">Call ${DATA.phone}</a><a href="https://wa.me/${digits}" target="_blank" rel="noopener">Chat on WhatsApp</a></div>`;
+// portfolio assistant popup
+const CH=[],add=t=>CH.push(t);
+add(`About ${DATA.name}: ${DATA.summary}`);add(`Contact ${DATA.name}: email ${DATA.email}, phone or WhatsApp ${DATA.phone}, based in ${DATA.location}. ${DATA.links.map(l=>l[0]+": "+l[2]).join(", ")}.`);add(`Resume: you can download the resume from the Resume section of this page.`);
+[...DATA.jobs,...DATA.moreJobs].forEach(j=>j.points.forEach(p=>add(`At ${j.org||"Amazon"} (${j.title}, ${j.when}): ${p}`)));
+DATA.projects.forEach(p=>{add(`Project ${p.title} (${p.context}), tools: ${p.tags.join(", ")}.${p.detail?" "+p.detail.overview:""}`);(p.points||[]).forEach(x=>add(`Project ${p.title}: ${x}`));if(p.problem){add(`Project ${p.title}, the problem it solved: ${p.problem}`);add(`Project ${p.title}, the solution: ${p.solution.join(" ")} ${p.impact||""}`)}(p.detail?.more||[]).forEach(x=>add(`Project ${p.title}: ${x}`))});
+Object.entries(DATA.skills).forEach(([k,v])=>add(`Skills and tools, ${k}: ${v.join(", ")}.`));
+DATA.extra.forEach(x=>{if(x.groups)add(`Currently exploring: ${Object.entries(x.groups).map(([k,v])=>k+": "+v.join(", ")).join("; ")}.`)});
+add(`Certifications: ${DATA.certs.join("; ")}.`);add(`Awards: ${DATA.awards.join("; ")}.`);add(`Education: ${DATA.education}. Languages: ${DATA.languages}.`);add(`Confidentiality: ${DATA.policy}`);
+const STOP=new Set("a an the is are was were of in on at to for and or with what who how do does did you your his her he she me my tell about can has have it this that joan any which".split(" ")),stem=w=>w.replace(/(ing|ed|es|s|ion)$/,"");
+function answer(q){const ql=L(q);if(/contact|email|phone|whatsapp|reach|linkedin|github|hire/.test(ql))return CH[1];if(/resume|cv\b/.test(ql))return CH[2];
+ const ws=ql.replace(/[^a-z0-9+# ]/g," ").split(/\s+/).filter(w=>w&&!STOP.has(w)).map(stem).filter(w=>w.length>1);
+ const sc=CH.map(c=>{const cl=L(c);return ws.reduce((a,w)=>a+(cl.includes(w)?1+(w.length>4?.5:0):0),0)});
+ const idx=sc.map((s,i)=>[s,i]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,2);
+ if(!idx.length||idx[0][0]<1)return `I don’t have that on this page. You can ask ${DATA.name} directly at ${DATA.email}.`;
+ return idx.map(x=>CH[x[1]]).join("\n\n")}
+const say=(t,c)=>{const d=document.createElement("div");if(c=="b"){d.className="row";d.innerHTML=`<span class="av">${svg("bot")}</span><div class="m b"></div>`;d.lastChild.textContent=t}else{d.className="m u";d.textContent=t}$("msgs").append(d);$("msgs").scrollTop=1e9};
+$("fab").innerHTML=svg("bot");$("phIc").innerHTML=svg("bot");
+const pop=o=>{$("pop").hidden=!o;$("fab").setAttribute("aria-expanded",o);if(o)$("q").focus()};
+$("fab").onclick=()=>pop($("pop").hidden);$("askTab").onclick=()=>pop(true);$("pc").onclick=()=>{pop(false);$("fab").focus()};
+addEventListener("keydown",e=>{if(e.key=="Escape"&&!$("pop").hidden)pop(false)});
+say(`Hi! I can answer questions about ${DATA.name}’s experience, projects, skills and certifications.`,"b");
+["What did Joan automate at Amazon?","Which tools does Joan use?","Any SQL certifications?","How can I contact Joan?"].forEach(q=>{const b=document.createElement("button");b.className="chip";b.type="button";b.textContent=q;b.onclick=()=>ask(q);$("sugg").append(b)});
+function ask(q){say(q,"u");setTimeout(()=>say(answer(q),"b"),250)}
+$("chatForm").onsubmit=e=>{e.preventDefault();const v=$("q").value.trim();if(v){$("q").value="";ask(v)}};
+// start: remembered theme, else the default theme
+(function(){let k=DATA.defaultSkin;try{k=localStorage.getItem("skin")||k}catch(e){}skin(k)})();
+</script>
+</body>
+</html>
